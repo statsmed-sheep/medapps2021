@@ -24,13 +24,13 @@ You can install the development version of medapps2021 like so:
 ``` r
 devtools::install_github("statsmed-sheep/medapps2021")
 #> Downloading GitHub repo statsmed-sheep/medapps2021@HEAD
-#> * checking for file ‘/private/var/folders/m3/0v7qg7ks0zqfwl1qbrhg1tmr0000gn/T/RtmpcX1ixF/remotesf9e367e47c06/statsmed-sheep-medapps2021-f2eff65/DESCRIPTION’ ... OK
+#> * checking for file ‘/private/var/folders/m3/0v7qg7ks0zqfwl1qbrhg1tmr0000gn/T/RtmprI0xfw/remotesfac4148efd4b/statsmed-sheep-medapps2021-5635ec0/DESCRIPTION’ ... OK
 #> * preparing ‘medapps2021’:
 #> * checking DESCRIPTION meta-information ... OK
 #> * checking for LF line-endings in source and make files and shell scripts
 #> * checking for empty or unneeded directories
 #> * building ‘medapps2021_0.0.0.9000.tar.gz’
-#> Installing package into '/private/var/folders/m3/0v7qg7ks0zqfwl1qbrhg1tmr0000gn/T/RtmpVLnTBn/temp_libpathed8f63ddd75e'
+#> Installing package into '/private/var/folders/m3/0v7qg7ks0zqfwl1qbrhg1tmr0000gn/T/RtmpVLnTBn/temp_libpathed8f418c718'
 #> (as 'lib' is unspecified)
 library(medapps2021)
 ```
@@ -72,7 +72,8 @@ ggplot(astats_ex, aes(x = year, y = number)) +
   labs(title = "Number of Medical School Applicants, 2018-2022", x = "Admissions Cycle Year", y = "Number of Applicants")
 ```
 
-<img src="man/figures/README-example-1.png" width="100%" /> ##
-Contributor(s)
+<img src="man/figures/README-example-1.png" width="100%" />
+
+## Contributor(s)
 
 Clara Li

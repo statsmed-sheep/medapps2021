@@ -55,6 +55,7 @@ ggplot(astats_ex, aes(x = year, y = number)) +
   geom_col(position = "dodge") +
   labs(title = "Number of Medical School Applicants, 2018-2022", x = "Admissions Cycle Year", y = "Number of Applicants")
 ```
+
 ## Contributor(s)
 
 Clara Li
