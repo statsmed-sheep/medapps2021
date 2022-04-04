@@ -1,0 +1,29 @@
+#' MCAT and GPA for all 2021-2022 medical school applicants.
+#'
+#' Mean total MCAT exam/sub-section scores and combined/science/non-science GPAs for all 2021-2022 applicants
+#'@format A data frame of 36 rows representing one statistic (e.g. MCAT subsection score) for one year and 5 variables
+#' \describe{
+#' \item{category}{(character) Category of measurement, e.g. total MCAT exam score or non-science GPA.}
+#' \item{year}{(character) Start and end year of admissions cycle in which observation was recorded.}
+#' \item{mean}{(numeric) Average value of category's statistic.}
+#' \item{SD}{(numeric) Standard deviation of category's statistic.}
+#' \item{number}{(numeric) Number of applicable observations.}
+#' }
+#' @source 2021 FACTS: Applicants and Matriculants Data, Association of American Medical Colleges
+#'   <https://www.aamc.org/data-reports/students-residents/interactive-data/2021-facts-applicants-and-matriculants-datal>.
+"astats_all"
+
+#' MCAT and GPA for all 2021-2022 medical school matriculants.
+#'
+#' Mean total MCAT exam/sub-section scores and combined/science/non-science GPAs for all 2021-2022 matriculants
+#'@format A data frame of 36 rows representing one statistic (e.g. MCAT subsection score) for one year and 5 variables
+#' \describe{
+#' \item{category}{(character) Category of measurement, e.g. total MCAT exam score or non-science GPA.}
+#' \item{year}{(character) Start and end year of admissions cycle in which observation was recorded.}
+#' \item{mean}{(numeric) Average value of category's statistic.}
+#' \item{SD}{(numeric) Standard deviation of category's statistic.}
+#' \item{number}{(numeric) Number of applicable observations.}
+#' }
+#' @source 2021 FACTS: Applicants and Matriculants Data, Association of American Medical Colleges
+#'   <https://www.aamc.org/data-reports/students-residents/interactive-data/2021-facts-applicants-and-matriculants-datal>.
+"mstats_all"
