@@ -20,37 +20,44 @@ knitr::opts_chunk$set(
 [![CRAN status](https://www.r-pkg.org/badges/version/medapps2021)](https://CRAN.R-project.org/package=medapps2021)
 <!-- badges: end -->
 
-The goal of medapps2021 is to ...
+`medapps2021` contains tidy format data from the Association of American Medical College's 2021 FACTS: Applicants and Matriculants Data website. Datasets include the mean entrance exam scores and GPAs of medical school applicants and matriculants for the 2021-2022 admissions cycle across several different demographics.
 
 ## Installation
 
 You can install the development version of medapps2021 like so:
 
-``` r
-# FILL THIS IN! HOW CAN PEOPLE INSTALL YOUR DEV PACKAGE?
+``` {r}
+devtools::install_github("statsmed-sheep/medapps2021")
+library(medapps2021)
 ```
+
+## Data
+
+* `astats_all`: mean total MCAT exam/sub-section scores and combined/science/non-science GPAs for all 2021-2022 applicants.
+* `mstats_all`: mean total MCAT exam/sub-section scores and combined/science/non-science GPAs for all 2021-2022 matriculants.
 
 ## Example
 
-This is a basic example which shows you how to solve a common problem:
+The tidy format of the data allows for application of tidyverse packages like `dplyr` and `ggplot2` for data wrangling and visualization, respectively.
 
 ```{r example}
+library(tidyverse)
 library(medapps2021)
-## basic example code
-```
 
-What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
+# Data wrangling
 
-```{r cars}
-summary(cars)
+astats_ex <- astats_all %>% 
+  filter(category == "Total Applicants")
+
+# Data visualization
+
+ggplot(astats_ex, aes(x = year, y = number)) + 
+  geom_col(position = "dodge") +
+  labs(title = "Number of Medical School Applicants, 2018-2022", x = "Admissions Cycle Year", y = "Number of Applicants")
 ```
 
 You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date. `devtools::build_readme()` is handy for this. You could also use GitHub Actions to re-render `README.Rmd` every time you push. An example workflow can be found here: <https://github.com/r-lib/actions/tree/v1/examples>.
 
-You can also embed plots, for example:
+## Contributor(s)
 
-```{r pressure, echo = FALSE}
-plot(pressure)
-```
-
-In that case, don't forget to commit and push the resulting figure files, so they display on GitHub and CRAN.
+Clara Li
