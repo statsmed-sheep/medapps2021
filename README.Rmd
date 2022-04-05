@@ -26,7 +26,7 @@ knitr::opts_chunk$set(
 
 You can install the development version of medapps2021 like so:
 
-``` {r}
+``` {r, echo = FALSE}
 devtools::install_github("statsmed-sheep/medapps2021")
 library(medapps2021)
 ```
@@ -38,9 +38,9 @@ library(medapps2021)
 
 ## Example
 
-The tidy format of the data allows for application of tidyverse packages like `dplyr` and `ggplot2` for data wrangling and visualization, respectively.
+The tidy format of the data allows the use of tidyverse packages like `dplyr` and `ggplot2` for data wrangling and visualization, respectively.
 
-```{r example}
+```{r example, echo = FALSE}
 library(tidyverse)
 library(medapps2021)
 
