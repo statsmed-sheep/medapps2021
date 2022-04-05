@@ -21,23 +21,21 @@ across several different demographics.
 
 You can install the development version of medapps2021 like so:
 
-    #> Downloading GitHub repo statsmed-sheep/medapps2021@HEAD
-    #> magrittr (2.0.2 -> 2.0.3) [CRAN]
-    #> glue     (1.6.1 -> 1.6.2) [CRAN]
-    #> Installing 2 packages: magrittr, glue
-    #> Installing packages into '/private/var/folders/m3/0v7qg7ks0zqfwl1qbrhg1tmr0000gn/T/RtmplC1ZTq/temp_libpath111e55fe02329'
-    #> (as 'lib' is unspecified)
-    #> 
-    #> The downloaded binary packages are in
-    #>  /var/folders/m3/0v7qg7ks0zqfwl1qbrhg1tmr0000gn/T//RtmpVNQOOO/downloaded_packages
-    #> * checking for file ‘/private/var/folders/m3/0v7qg7ks0zqfwl1qbrhg1tmr0000gn/T/RtmpVNQOOO/remotes1122127e08ca5/statsmed-sheep-medapps2021-acc88c3/DESCRIPTION’ ... OK
-    #> * preparing ‘medapps2021’:
-    #> * checking DESCRIPTION meta-information ... OK
-    #> * checking for LF line-endings in source and make files and shell scripts
-    #> * checking for empty or unneeded directories
-    #> * building ‘medapps2021_0.0.0.9000.tar.gz’
-    #> Installing package into '/private/var/folders/m3/0v7qg7ks0zqfwl1qbrhg1tmr0000gn/T/RtmplC1ZTq/temp_libpath111e55fe02329'
-    #> (as 'lib' is unspecified)
+``` r
+devtools::install_github("statsmed-sheep/medapps2021")
+#> magrittr (2.0.2 -> 2.0.3) [CRAN]
+#> glue     (1.6.1 -> 1.6.2) [CRAN]
+#> 
+#> The downloaded binary packages are in
+#>  /var/folders/m3/0v7qg7ks0zqfwl1qbrhg1tmr0000gn/T//RtmpZUiTZ9/downloaded_packages
+#> * checking for file ‘/private/var/folders/m3/0v7qg7ks0zqfwl1qbrhg1tmr0000gn/T/RtmpZUiTZ9/remotes1139018e706e/statsmed-sheep-medapps2021-f167212/DESCRIPTION’ ... OK
+#> * preparing ‘medapps2021’:
+#> * checking DESCRIPTION meta-information ... OK
+#> * checking for LF line-endings in source and make files and shell scripts
+#> * checking for empty or unneeded directories
+#> * building ‘medapps2021_0.0.0.9000.tar.gz’
+library(medapps2021)
+```
 
 ## Data
 
@@ -52,14 +50,21 @@ The tidy format of the data allows the use of tidyverse packages like
 `dplyr` and `ggplot2` for data wrangling and visualization,
 respectively.
 
-    #> ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.1 ──
-    #> ✓ ggplot2 3.3.5     ✓ purrr   0.3.4
-    #> ✓ tibble  3.1.6     ✓ dplyr   1.0.7
-    #> ✓ tidyr   1.1.4     ✓ stringr 1.4.0
-    #> ✓ readr   2.1.2     ✓ forcats 0.5.1
-    #> ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-    #> x dplyr::filter() masks stats::filter()
-    #> x dplyr::lag()    masks stats::lag()
+``` r
+library(tidyverse)
+library(medapps2021)
+
+# Data wrangling
+
+astats_ex <- astats_all %>% 
+  filter(category == "Total Applicants")
+
+# Data visualization
+
+ggplot(astats_ex, aes(x = year, y = number)) + 
+  geom_col(position = "dodge") +
+  labs(title = "Number of Medical School Applicants, 2018-2022", x = "Admissions Cycle Year", y = "Number of Applicants")
+```
 
 <img src="man/figures/README-example-1.png" width="100%" />
 
