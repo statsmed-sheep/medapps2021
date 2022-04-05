@@ -23,17 +23,6 @@ You can install the development version of medapps2021 like so:
 
 ``` r
 devtools::install_github("statsmed-sheep/medapps2021")
-#> magrittr (2.0.2 -> 2.0.3) [CRAN]
-#> glue     (1.6.1 -> 1.6.2) [CRAN]
-#> 
-#> The downloaded binary packages are in
-#>  /var/folders/m3/0v7qg7ks0zqfwl1qbrhg1tmr0000gn/T//RtmpZUiTZ9/downloaded_packages
-#> * checking for file ‘/private/var/folders/m3/0v7qg7ks0zqfwl1qbrhg1tmr0000gn/T/RtmpZUiTZ9/remotes1139018e706e/statsmed-sheep-medapps2021-f167212/DESCRIPTION’ ... OK
-#> * preparing ‘medapps2021’:
-#> * checking DESCRIPTION meta-information ... OK
-#> * checking for LF line-endings in source and make files and shell scripts
-#> * checking for empty or unneeded directories
-#> * building ‘medapps2021_0.0.0.9000.tar.gz’
 library(medapps2021)
 ```
 
