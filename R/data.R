@@ -10,7 +10,7 @@
 #' \item{number}{(numeric) Number of applicable observations.}
 #' }
 #' @source 2021 FACTS: Applicants and Matriculants Data, Association of American Medical Colleges
-#'   <https://www.aamc.org/data-reports/students-residents/interactive-data/2021-facts-applicants-and-matriculants-datal>.
+#'   <https://www.aamc.org/data-reports/students-residents/interactive-data/2021-facts-applicants-and-matriculants-data>.
 "astats_all"
 
 #' MCAT and GPA for all 2021-2022 medical school matriculants.
@@ -25,5 +25,5 @@
 #' \item{number}{(numeric) Number of applicable observations.}
 #' }
 #' @source 2021 FACTS: Applicants and Matriculants Data, Association of American Medical Colleges
-#'   <https://www.aamc.org/data-reports/students-residents/interactive-data/2021-facts-applicants-and-matriculants-datal>.
+#'   <https://www.aamc.org/data-reports/students-residents/interactive-data/2021-facts-applicants-and-matriculants-data>.
 "mstats_all"

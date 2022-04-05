@@ -16,7 +16,7 @@ A data frame of 36 rows representing one statistic (e.g. MCAT subsection score) 
 }
 \source{
 2021 FACTS: Applicants and Matriculants Data, Association of American Medical Colleges
-\url{https://www.aamc.org/data-reports/students-residents/interactive-data/2021-facts-applicants-and-matriculants-datal}.
+\url{https://www.aamc.org/data-reports/students-residents/interactive-data/2021-facts-applicants-and-matriculants-data}.
 }
 \usage{
 astats_all
