@@ -13,11 +13,14 @@ knitr::opts_chunk$set(
 )
 ```
 
+medapps2021 <img src = "data-raw/Sticker/hex_medapps2021.png" align = "right" height = 140/>
+
 # medapps2021
 
 <!-- badges: start -->
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 [![CRAN status](https://www.r-pkg.org/badges/version/medapps2021)](https://CRAN.R-project.org/package=medapps2021)
+[![R-CMD-check](https://github.com/statsmed-sheep/medapps2021/workflows/R-CMD-check/badge.svg)](https://github.com/statsmed-sheep/medapps2021/actions)
 <!-- badges: end -->
 
 `medapps2021` contains tidy format data from the Association of American Medical College's 2021 FACTS: Applicants and Matriculants Data website. Datasets include the mean entrance exam scores and GPAs of medical school applicants and matriculants for the 2021-2022 admissions cycle across several different demographics.

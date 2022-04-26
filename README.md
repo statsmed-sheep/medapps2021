@@ -1,6 +1,9 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
+medapps2021
+<img src = "data-raw/Sticker/hex_medapps2021.png" align = "right" height = 140/>
+
 # medapps2021
 
 <!-- badges: start -->
