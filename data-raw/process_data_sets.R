@@ -67,7 +67,30 @@ usethis::use_data(mstats_major, overwrite = TRUE)
 
 # MCAT and GPA for all applicants by race/ethnicity
 
+astats_race <- stats_race[c(4:21),] %>%
+  row_to_names(row_number = 1)
+
+colnames(astats_race) <- c("category", "statistic", "american_indian", "asian", "black", "hispanic_latino", "pacific_islander", "white", "other", "multiple", "unknown", "intl", "total")
+
+astats_race <- astats_race %>%
+  fill(category) %>%
+  pivot_longer(c('mean', 'SD'), names_to, values_to) %>%
+  mutate(across(.cols = 3:13, .fns = as.numeric))
+
+usethis::use_data(astats_race, overwrite = TRUE)
+
 # MCAT and GPA for all matriculants by race/ethnicity
+
+mstats_race <- stats_race[c(23:40),] %>%
+  row_to_names(row_number = 1)
+
+colnames(mstats_race) <- c("category", "statistic", "american_indian", "asian", "black", "hispanic_latino", "pacific_islander", "white", "other", "multiple", "unknown", "intl", "total")
+
+mstats_race <- mstats_race %>%
+  fill(category) %>%
+  mutate(across(.cols = 3:13, .fns = as.numeric))
+
+usethis::use_data(mstats_race, overwrite = TRUE)
 
 # MCAT and GPA for all applicants by sex
 

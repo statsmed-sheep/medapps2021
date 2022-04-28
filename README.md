@@ -12,10 +12,12 @@ medapps2021
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 [![CRAN
 status](https://www.r-pkg.org/badges/version/medapps2021)](https://CRAN.R-project.org/package=medapps2021)
+[![R-CMD-check](https://github.com/statsmed-sheep/medapps2021/workflows/R-CMD-check/badge.svg)](https://github.com/statsmed-sheep/medapps2021/actions)
 <!-- badges: end -->
 
-`medapps2021` contains tidy format data from the Association of American
-Medical College’s 2021 FACTS: Applicants and Matriculants Data website.
+`medapps2021` contains tidy format data from [the Association of
+American Medical College’s 2021 FACTS: Applicants and Matriculants Data
+website](https://www.aamc.org/data-reports/students-residents/interactive-data/2021-facts-applicants-and-matriculants-data).
 Datasets include the mean entrance exam scores and GPAs of medical
 school applicants and matriculants for the 2021-2022 admissions cycle
 across several different demographics.
@@ -35,6 +37,30 @@ library(medapps2021)
     combined/science/non-science GPAs for all 2021-2022 applicants.
 -   `mstats_all`: mean total MCAT exam/sub-section scores and
     combined/science/non-science GPAs for all 2021-2022 matriculants.
+-   `astats_major`: mean total MCAT exam/sub-section scores and
+    combined/science/non-science GPAs for all 2021-2022 applicants by
+    undergraduate school major.
+-   `mstats_major`: mean total MCAT exam/sub-section scores and
+    combined/science/non-science GPAs for all 2021-2022 matriculants by
+    undergraduate school major.
+-   `astats_race`: mean total MCAT exam/sub-section scores and
+    combined/science/non-science GPAs for all 2021-2022 applicants by
+    race and ethnicity.
+-   `mstats_race`: mean total MCAT exam/sub-section scores and
+    combined/science/non-science GPAs for all 2021-2022 matriculants by
+    race and ethnicity.
+-   `astats_sex`: mean total MCAT exam/sub-section scores and
+    combined/science/non-science GPAs for all 2021-2022 applicants by
+    sex.
+-   `mstats_sex`: mean total MCAT exam/sub-section scores and
+    combined/science/non-science GPAs for all 2021-2022 matriculants by
+    sex.
+-   `astats_state`: mean total MCAT exam/sub-section scores and
+    combined/science/non-science GPAs for all 2021-2022 applicants by
+    state.
+-   `mstats_state`: mean total MCAT exam/sub-section scores and
+    combined/science/non-science GPAs for all 2021-2022 matriculants by
+    state.
 
 ## Example
 
