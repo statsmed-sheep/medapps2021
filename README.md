@@ -55,12 +55,6 @@ library(medapps2021)
 -   `mstats_sex`: mean total MCAT exam/sub-section scores and
     combined/science/non-science GPAs for all 2021-2022 matriculants by
     sex.
--   `astats_state`: mean total MCAT exam/sub-section scores and
-    combined/science/non-science GPAs for all 2021-2022 applicants by
-    state.
--   `mstats_state`: mean total MCAT exam/sub-section scores and
-    combined/science/non-science GPAs for all 2021-2022 matriculants by
-    state.
 
 ## Example
 

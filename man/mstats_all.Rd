@@ -11,7 +11,7 @@ A data frame of 36 rows representing one statistic (e.g. MCAT subsection score) 
 \item{year}{(character) Start and end year of admissions cycle in which observation was recorded.}
 \item{mean}{(numeric) Average value of category's statistic.}
 \item{SD}{(numeric) Standard deviation of category's statistic.}
-\item{number}{(numeric) Number of applicable observations.}
+\item{num_apps}{(numeric) Number of applicable observations.}
 }
 }
 \source{

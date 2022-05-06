@@ -1,12 +1,15 @@
 Package: medapps2021
 Title: AAMC medical school applicant and matriculant data for the 2021-2022 admissions cycle
-Version: 0.0.0.9000
+Version: 0.0.0.9002
 Authors@R: 
     person("Clara", "Li", , "clarasepianli@gmail.com", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0003-2456-0849"))
 Description: Includes datasets sourced from the Association of American Medical College's 2021 FACTS: Applicants and Matriculants Data site and functions for summarizing them.
 License: MIT + file LICENSE
 Suggests: 
+    tidyverse,
+    knitr,
+    rmarkdown,
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
 Encoding: UTF-8
@@ -17,3 +20,4 @@ Depends:
 LazyData: true
 Imports: 
     stringr
+VignetteBuilder: knitr

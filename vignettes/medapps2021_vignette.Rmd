@@ -1,0 +1,86 @@
+---
+title: "medapps2021_vignette"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{medapps2021_vignette}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(medapps2021)
+library(tidyverse)
+```
+
+The `medapps2021` package provides cleaned and tidied datasets sourced from the Association of American Medical Colleges (AAMC) [2021 FACTS: Applicants and Matriculants Data](https://www.aamc.org/data-reports/students-residents/interactive-data/2021-facts-applicants-and-matriculants-data) regarding the 2021-2022 medical school admissions cycle.
+
+# Purpose and intended user base
+
+Nearly all of the data tables provided by the AAMC are in non-tidy format, making analysis using RStudio and other tools difficult. This package aims to substantially cut down the amount of wrangling necessary to begin assessing the AAMC's data. The intended user base for `medapps2021` is prehealth students and advisors who have at least a rudimentary background in data analysis with R. Individuals just beginning to learn how to analyze and visualize data with the R programming language may also find the package helpful.
+
+# Principles of tidy data
+
+Messy, inconsistently formatted data lead to large amounts of time and effort spent translating the different representations. To facilitate this cleaning process, the tidy data format touted by Hadley Wickham follows the below three principles:
+
+1. Each variable must have its own column.
+2. Each observation must have its own row.
+3. Each value must have its own cell.
+
+# Included data sets
+
+* `astats_all`: mean total MCAT exam/sub-section scores and combined/science/non-science GPAs for all 2021-2022 applicants.
+* `mstats_all`: mean total MCAT exam/sub-section scores and combined/science/non-science GPAs for all 2021-2022 matriculants.
+* `astats_major`: mean total MCAT exam/sub-section scores and combined/science/non-science GPAs for all 2021-2022 applicants by undergraduate school major.
+* `mstats_major`: mean total MCAT exam/sub-section scores and combined/science/non-science GPAs for all 2021-2022 matriculants by undergraduate school major.
+* `astats_race`: mean total MCAT exam/sub-section scores and combined/science/non-science GPAs for all 2021-2022 applicants by race and ethnicity.
+* `mstats_race`: mean total MCAT exam/sub-section scores and combined/science/non-science GPAs for all 2021-2022 matriculants by race and ethnicity.
+* `astats_sex`: mean total MCAT exam/sub-section scores and combined/science/non-science GPAs for all 2021-2022 applicants by sex.
+* `mstats_sex`: mean total MCAT exam/sub-section scores and combined/science/non-science GPAs for all 2021-2022 matriculants by sex.
+
+Below is a snippet of the `astats_major` dataset:
+
+```{r}
+head(astats_major)
+```
+
+# Ways of using the data
+
+Questions that may be of interest to those using this package include:
+
+1. What is the relative distribution of undergraduate school majors among medical school applicants?
+
+```{r}
+ggplot(astats_major, aes(x = major, y = num_apps, fill = major)) + 
+  geom_col(position = "dodge") +
+  labs(title = "Undergraduate Major Distribution Among Applicants", x = "Major", y = "Number of Applicants") +
+  theme(axis.text.x = element_blank())
+```
+Here we can see that biology majors are far and away the most common major among applicants, while math and statistics majors are just a fraction of the applicant pool.
+
+2. How does the distribution of MCAT exam scores compare between different ethnicities among matriculants?
+
+```{r}
+mstats_race_ex <- mstats_race %>% 
+  filter(category == "Total MCAT" & race %in% c("asian", "black", "white"))
+
+ggplot(data.frame(x = c(472, 528)), aes(x)) + 
+  mapply(function(mean, sd, col) {
+    stat_function(fun = dnorm, args = list(mean = mean, sd = sd), col = col)
+  }, 
+  mean = mstats_race_ex$mean, 
+  sd = mstats_race_ex$SD, 
+  col = c('red', 'blue', 'green')
+) + labs(title = "Total MCAT Exam Score Distribution Across Ethnicities", x = "Total MCAT Exam Score", y = "Number of Applicants") +
+  scale_color_manual(name = 'Race/ethnicity',
+                     breaks = c('Asian', 'Black', 'White'),
+                     values = c('Asian' = 'red', 'Black' = 'blue', 'White' = 'green'))
+
+# References: https://stackoverflow.com/questions/27009641/plot-multiple-normal-curves-in-same-plot
+```
