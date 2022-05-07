@@ -28,7 +28,6 @@ You can install the development version of medapps2021 like so:
 
 ``` r
 devtools::install_github("statsmed-sheep/medapps2021")
-library(medapps2021)
 ```
 
 ## Data
@@ -73,9 +72,13 @@ astats_ex <- astats_all %>%
 
 # Data visualization
 
-ggplot(astats_ex, aes(x = year, y = number)) + 
+ggplot(astats_ex, aes(x = year, y = num_apps)) + 
   geom_col(position = "dodge") +
-  labs(title = "Number of Medical School Applicants, 2018-2022", x = "Admissions Cycle Year", y = "Number of Applicants")
+  labs(
+    title = "Number of Medical School Applicants, 2018-2022", 
+    x = "Admissions Cycle Year", 
+    y = "Number of Applicants"
+  )
 ```
 
 <img src="man/figures/README-example-1.png" width="100%" />
