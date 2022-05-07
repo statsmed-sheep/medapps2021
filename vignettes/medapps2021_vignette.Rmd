@@ -3,18 +3,21 @@ title: "medapps2021_vignette"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{medapps2021_vignette}
-  %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
+  %\VignetteEngine{knitr::rmarkdown}
+editor_options: 
+  chunk_output_type: console
 ---
 
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
-  comment = "#>"
+  comment = "#>",
+  fig.width = 5
 )
 ```
 
-```{r setup}
+```{r setup, message=FALSE}
 library(medapps2021)
 library(tidyverse)
 ```
@@ -59,7 +62,11 @@ Questions that may be of interest to those using this package include:
 ```{r}
 ggplot(astats_major, aes(x = major, y = num_apps, fill = major)) + 
   geom_col(position = "dodge") +
-  labs(title = "Undergraduate Major Distribution Among Applicants", x = "Major", y = "Number of Applicants") +
+  labs(
+    title = "Undergraduate Major Distribution Among Applicants", 
+    x = "Major", 
+    y = "Number of Applicants"
+  ) +
   theme(axis.text.x = element_blank())
 ```
 Here we can see that biology majors are far and away the most common major among applicants, while math and statistics majors are just a fraction of the applicant pool.
@@ -67,7 +74,7 @@ Here we can see that biology majors are far and away the most common major among
 2. How does the distribution of MCAT exam scores compare between different ethnicities among matriculants?
 
 ```{r}
-mstats_race_ex <- mstats_race %>% 
+mstats_race_ex <- mstats_race %>%
   filter(category == "Total MCAT" & race %in% c("asian", "black", "white"))
 
 ggplot(data.frame(x = c(472, 528)), aes(x)) + 
@@ -77,10 +84,17 @@ ggplot(data.frame(x = c(472, 528)), aes(x)) +
   mean = mstats_race_ex$mean, 
   sd = mstats_race_ex$SD, 
   col = c('red', 'blue', 'green')
-) + labs(title = "Total MCAT Exam Score Distribution Across Ethnicities", x = "Total MCAT Exam Score", y = "Number of Applicants") +
-  scale_color_manual(name = 'Race/ethnicity',
-                     breaks = c('Asian', 'Black', 'White'),
-                     values = c('Asian' = 'red', 'Black' = 'blue', 'White' = 'green'))
+) + 
+  labs(
+    title = "Total MCAT Exam Score Distribution Across Ethnicities", 
+    x = "Total MCAT Exam Score", 
+    y = "Number of Applicants"
+  ) +
+  scale_color_manual(
+    name = 'Race/ethnicity',
+    breaks = c('Asian', 'Black', 'White'),
+    values = c('Asian' = 'red', 'Black' = 'blue', 'White' = 'green')
+  )
 
 # References: https://stackoverflow.com/questions/27009641/plot-multiple-normal-curves-in-same-plot
 ```
